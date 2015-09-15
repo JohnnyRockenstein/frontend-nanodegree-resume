@@ -32,7 +32,7 @@ var bio = {
     "name": "Dustin Horrock",
     "role": "Content Creator",
     "welcomeMessage": "Welcome to my page",
-    "skills": ["Item1", "Item2", "Item3"],
+    "skills": ["Design", "Interactive", "Retail"],
     "contacts": {
         "mobile": "2048808655",
         "email": "dustinhorrock@gmail.com",
@@ -69,3 +69,15 @@ var education = {
    	}
    	]
 }
+if (bio.skills[0].length > 0) {
+    $("#header").append(HTMLskillsStart);
+
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+    $("#skills").append(formattedSkill);
+
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+    $("#skills").append(formattedSkill);
+
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+    $("#skills").append(formattedSkill);
+};
