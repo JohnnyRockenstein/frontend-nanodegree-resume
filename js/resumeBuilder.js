@@ -82,12 +82,45 @@ if (bio.skills[0].length > 0) {
     $("#skills").append(formattedSkill);
 };
 
-for (item in work.jobs) {
-	$("#workExperience").append(HTMLworkStart);
-	var formattedWorkExperience = HTMLworkEmployer.replace("%data%", work.jobs[item].employer);
-	var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[item].title);
-	$(".work-entry:last").append(formattedWorkExperience,formattedWorkTitle);
-	}
+function displayWork() {
+    for (item in work.jobs) {
+        $("#workExperience").append(HTMLworkStart);
+        var formattedWorkExperience = HTMLworkEmployer.replace("%data%", work.jobs[item].employer);
+        var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[item].title);
+        var formattedEmployerTitle = formattedWorkExperience + formattedWorkTitle;
+        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[item].dates);
+        var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[item].location)
+        var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[item].description)
+        $(".work-entry:last").append(formattedEmployerTitle, formattedDates, formattedLocation, formattedDescription);
+    }
+}
+displayWork();
+
+function inName(old_name){
+	var newName = old_name;
+	newName = newName.split(" ");
+	firstName = newName[0].charAt(0).toUpperCase() + newName[0].slice(1).toLowerCase();
+	lastName = newName[1].toUpperCase();
+	fullName = firstName +" " + lastName;
+	return fullName;
+}
+
+
+
+
+
+
+function locationizer(work_obj) {
+    var locations = [];
+    for (var item in work_obj.jobs) {
+        locations.push(work_obj.jobs[item].location);
+    }
+    return locations;
+}
+
+$("#main").append(internationalizeButton);
+
+
 
 // for (item in work.jobs) {
 // 	var entry = $(HTMLworkStart);
