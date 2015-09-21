@@ -102,8 +102,8 @@ var work = {
             "title": "Content Creator",
             "location": "Winnipeg",
             "dates": "October 2014 - Present",
-            "description": "Worked closely with internal teams and external vendors in acquiring, \
-             creating and maintaining engaging visual content for retail stores and mobile phones.\
+            "description": "Worked closely with internal teams and external vendors in acquiring,\
+            creating and maintaining engaging visual content for retail stores and mobile phones.\
               Including Interactive in-store experiences, graphics, animation and video content. ",
         }, {
             "employer": "Elder Creative",

@@ -103,12 +103,12 @@ a {
 .welcome-message {
     font-style: italic;
     font-size: 18px;
-    color: #black;
+    color: black;
     line-height: 28px;
 }
 
 #skills-h3 {
-    color: #black;
+    color: black;
     display: none;
 }
 
@@ -117,7 +117,7 @@ a {
 }
 
 .orange-text {
-    color: #black;
+    color: black;
 }
 
 .white-text {
