@@ -147,9 +147,7 @@ var work = {
                 " and creative approaches for a given assignment. Set the creative direction and" +
                 " strategic guidance throughout the duration of client team projects. Executed the" +
                 " principles that make innovative and effective digital communication.",
-        }
-
-    ],
+        }],
     display: function() {
         var formattedWorkExperience,
             formattedWorkTitle,
