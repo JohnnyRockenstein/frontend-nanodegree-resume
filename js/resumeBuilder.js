@@ -8,9 +8,9 @@ var bio = {
         "twitter": "@dustinhorrock",
         "location": "Winnipeg, Manitoba"
     },
-    "welcomeMessage": "Welcome to my page here you will find random text",
+    "welcomeMessage": "Welcome! Here you will find information about me.",
     "skills": ["Design", "Interactive", "Retail"],
-    "biopic": "http://placehold.it/250x250",
+    "biopic": "/images/dustin.jpg",
     "display": function() {
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
@@ -41,17 +41,17 @@ var education = {
     "schools": [{
         "name": "University of Manitoba",
         "location": "Winnipeg",
-        "degree": "Bachelor Fine Art",
+        "degree": "Bachelor of Fine Arts",
         "majors": ["Design", "Photography"],
         "dates": "September 2001 - May 2005",
-        "url": "http://www.test1.com"
+        "url": "http://umanitoba.ca/student/admissions/programs/fine-arts.html"
     }, {
         "name": "University of Manitoba",
         "location": "Winnipeg",
-        "degree": "Bachelor Fine Art Thesis",
+        "degree": "Bachelor of Fine Arts Thesis",
         "majors": ["Videography"],
         "dates": "September 2005 - May 2006",
-        "url": "http://www.test2.com"
+        "url": "http://umanitoba.ca/schools/art/undergrad/index.html"
     }],
     "onlineCourses": [{
         "title": "Javascript Basics",
@@ -59,10 +59,10 @@ var education = {
         "dates": "September 2015",
         "url": "http://www.udacity.com/course/ud804"
     }, {
-        "title": "Javascript Basics",
+        "title": "Intro to HTML & CSS",
         "school": "Udacity",
         "dates": "September 2015",
-        "url": "http://www.udacity.com/course/ud804"
+        "url": "https://www.udacity.com/course/intro-to-html-and-css--ud304"
     }],
     "display": function() {
         for (item in education.schools) {
@@ -82,10 +82,12 @@ var education = {
         $("#education").append(HTMLonlineClasses);
         for (item in education.onlineCourses) {
             $("#education").append(HTMLschoolStart);
-            var formattedHTMLonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[item].title);
+            var formattedHTMLonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[item].title)
+                .replace("#", education.onlineCourses[item].url)
             var formattedHTMLonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[item].school);
             var formattedHTMLonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[item].dates);
-            var formattedHTMLonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[item].url);
+            var formattedHTMLonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[item].url)
+                .replace("#", education.onlineCourses[item].url);
             var formattedTitleWithSchool = formattedHTMLonlineTitle + formattedHTMLonlineSchool;
             $(".education-entry:last").append(formattedTitleWithSchool,
                 formattedHTMLonlineDates,
@@ -138,13 +140,13 @@ var projects = {
         "date": "November 2014 - March 2015",
         "description": "The Patio Builder’s combination of functionality and simplicity is designed to \
             provide users with the tools to create backyard experiences in a few simple steps.",
-        "image": ["http://placehold.it/500x200", "http://placehold.it/500x200"]
+        "image": ["/images/project_image1.jpg", "/images/project_image2.jpg"]
     }, {
         "title": "Garage Builder",
         "date": "June 2015 - October 2015",
         "description": "The Garage Builder’s combination of functionality and simplicity is designed to \
             provide users with the tools to create garage experiences in a few simple steps.",
-        "image": ["http://placehold.it/500x200", "http://placehold.it/500x200"]
+        "image": ["/images/project_image3.jpg", "/images/project_image4.jpg"]
     }],
     "display": function() {
         for (item in projects.project) {
@@ -163,29 +165,6 @@ var projects = {
     }
 }
 
-bio.display();
-work.display();
-projects.display();
-education.display();
-
-// function inName(old_name) {
-//     var newName = old_name;
-//     newName = newName.split(" ");
-//     firstName = newName[0].charAt(0).toUpperCase() + newName[0].slice(1).toLowerCase();
-//     lastName = newName[1].toUpperCase();
-//     fullName = firstName + " " + lastName;
-//     return fullName;
-// }
-
-function inName(name) {
-	name = name.trim().split(" ");
-	console.log(name);
-	name[1] = name[1].toUpperCase();
-	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-	return name[0] + " " +name[1];
-}
-
-
 function locationizer(work) {
     var locations = [];
     for (var item in work.jobs) {
@@ -193,6 +172,17 @@ function locationizer(work) {
     }
     return locations;
 }
+// function inName(name) {
+// 	name = name.trim().split(" ");
+// 	console.log(name);
+// 	name[1] = name[1].toUpperCase();
+// 	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+// 	return name[0] + " " +name[1];
+// }
 
+bio.display();
+work.display();
+projects.display();
+education.display();
 $("#main").append(internationalizeButton);
 $("#mapDiv").append(googleMap);
