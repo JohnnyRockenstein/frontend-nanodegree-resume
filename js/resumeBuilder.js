@@ -136,7 +136,7 @@ var work = {
             dates: "October 2014 - Present",
             description: "Worked closely with internal teams and external vendors in acquiring" +
                 " creating and maintaining engaging visual content for retail stores and mobile phones." +
-                " Including Interactive in-store experiences, graphics, animation and video content.",
+                " Including Interactive in-store experiences, graphics, animation and video content."
         }, {
             employer: "Elder Creative",
             title: "Senior Art Director",
@@ -146,7 +146,7 @@ var work = {
                 " cross-disciplinary manner. Worked with planners and strategists to establish strategic" +
                 " and creative approaches for a given assignment. Set the creative direction and" +
                 " strategic guidance throughout the duration of client team projects. Executed the" +
-                " principles that make innovative and effective digital communication.",
+                " principles that make innovative and effective digital communication."
         }],
     display: function() {
         var formattedWorkExperience,
@@ -166,16 +166,16 @@ var work = {
             formattedDates = HTMLworkDates.replace("%data%", work.jobs[
                 item].dates);
             formattedLocation = HTMLworkLocation.replace("%data%", work
-                .jobs[item].location)
+                .jobs[item].location);
             formattedDescription = HTMLworkDescription.replace("%data%",
-                work.jobs[item].description)
+                work.jobs[item].description);
             $(".work-entry:last").append(formattedEmployerTitle,
                 formattedDates,
                 formattedLocation,
                 formattedDescription);
         }
     }
-}
+};
 var projects = {
     project: [{
         title: "Patio Builder",
@@ -218,7 +218,7 @@ var projects = {
             }
         }
     }
-}
+};
 
 function locationizer(work) {
     var locations = [];
