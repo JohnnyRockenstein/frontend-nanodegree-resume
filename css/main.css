@@ -112,6 +112,15 @@ a {
     display: none;
 }
 
+.half-Width {
+  width: 50%;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+}
+
 .orange {
     background-color: #ec4e44;
 }
